@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farzam</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "IRANSans", sans-serif;
+      background: #ffffff;
+      color: #222;
+      overflow-x: hidden;
+    }/* هدر طلایی با انیمیشن */
+header {
+  padding: 25px;
+  background: linear-gradient(90deg, #000, #2b2b2b);
+  color: #d4af37;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  animation: fadeDown 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* منوی مینیمال */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  padding: 5px 10px;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* بخش هرو با انیمیشن */
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff8e1, #ffe9b5);
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #000;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #444;
+}
+
+/* سکشن‌ها با انیمیشن اسکرول */
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal 1s ease forwards;
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: #d4af37;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #d4af37;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+  <header>Farzam</header>  <nav>
+    <a href="#home">صفحه اصلی</a>
+    <a href="#about">درباره من</a>
+    <a href="#gallery">گالری</a>
+    <a href="#blog">وبلاگ</a>
+    <a href="#contact">تماس</a>
+  </nav>  <section class="hero" id="home">
+    <h1>به سایت فرزام خوش آمدید</h1>
+    <p>طراحی طلایی، مینیمال و حرفه‌ای — مخصوص خودت ✨</p>
+  </section>  <section class="section" id="about">
+    <h2>درباره من</h2>
+    <p>
+      من فرزام هستم. متولد تبریز (۲۴ مرداد ۱۳۸۹)، عاشق فوتبال، مخصوصاً بارسلونا.
+      بازیکن‌های مورد علاقه‌ام مسی، یامال و رافینیا هستن. از گیم و تکنولوژی هم
+      خیلی خوشم میاد و همیشه دنبال یادگیری چیزای جدید هستم. چندتا حیوان خونگی
+      هم دارم؛ دو تا اسکار، دو تا پنتوس شکاری، دو تا مرغ عشق و دو تا فنچ.
+      این سایت رو ساختم تا هم اطلاعاتم رو با بقیه به اشتراک بذارم و هم کم‌کم
+      چیزای حرفه‌ای‌تر از وب یاد بگیرم.
+    </p>
+  </section>  <section class="section" id="gallery">
+    <h2>گالری</h2>
+    <p>به زودی تصاویر، طراحی‌ها یا هرچیزی که دوست داشته باشم اینجا قرار می‌دم.</p>
+  </section>  <section class="section" id="blog">
+    <h2>وبلاگ</h2>
+    <p>اینجا می‌تونی نوشته‌ها، ایده‌ها یا مطالب دلخواهم رو بخونی.</p>
+  </section>  <section class="section" id="contact">
+    <h2>تماس با من</h2>
+    <p>به‌زودی لینک‌های تماس و شبکه‌های اجتماعی اینجا قرار می‌گیرن.</p>
+  </section>  <footer>
+    تمامی حقوق برای Farzam محفوظ است.
+  </footer>
+</body>
+</html>
