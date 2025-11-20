@@ -1,304 +1,280 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>وب‌سایت فرزام — نسخهٔ کامل</title>
-  <meta name="description" content="وب‌سایت شخصی فرزام شیران جنگ — طراحی طلایی، مینیمال و حرفه‌ای" />
-  <!-- Font Awesome برای آیکون‌ها -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root{
-      --gold:#d4af37;
-      --gold-strong:#b8922c;
-      --bg:#0b0b0b;
-      --card:#0f0f10;
-      --muted:#bdbdbd;
-    }
-    html{scroll-behavior:smooth}
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: 'IRANSans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background:var(--bg);
-      color:#fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>وب‌سایت فرزام — نسخهٔ کامل</title>
+<meta name="description" content="وب‌سایت شخصی فرزام شیران جنگ — طراحی طلایی، مینیمال و حرفه‌ای" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+<style>
+:root{
+  --gold:#d4af37;
+  --bg:#0b0b0b;
+  --card:#0f0f10;
+  --muted:#bdbdbd;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'IRANSans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:#fff;
+}
 
-    /* پارالاکس هدر */
-    .hero-wrap{
-      position:relative;
-      min-height:42vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background-image:linear-gradient(135deg, rgba(212,175,55,0.06), rgba(212,175,55,0.02));
-      overflow:hidden;
-      background-attachment:fixed;
-      padding:60px 20px;
-    }
-    header.site{
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:1000;
-      background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(20,20,20,0.6));
-      backdrop-filter: blur(6px);
-      border-bottom:1px solid rgba(212,175,55,0.08);
-      padding:18px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-    header.site .brand{color:var(--gold); font-weight:700; font-size:20px}
-    nav.main{display:flex; gap:18px}
-    nav.main a{color:#fff; text-decoration:none; font-size:15px; opacity:0.95}
-    nav.main a:hover{color:var(--gold)}
+/* هدر و منوی موبایل */
+header.site{
+position:fixed; top:0; left:0; right:0; z-index:1000;
+background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(20,20,20,0.6));
+backdrop-filter: blur(6px);
+border-bottom:1px solid rgba(212,175,55,0.08);
+padding:18px 24px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+header.site .brand{color:var(--gold); font-weight:700; font-size:20px}
+nav.main{display:flex; gap:18px}
+nav.main a{color:#fff; text-decoration:none; opacity:0.95; font-size:15px}
+nav.main a:hover{color:var(--gold)}
+.menu-toggle{
+display:none; background:var(--gold); color:#000;
+padding:8px 10px; border-radius:8px; cursor:pointer;
+}
 
-    /* منوی موبایل */
-    .menu-toggle{display:none; background:var(--gold); color:#000; padding:8px 10px; border-radius:8px}
+/* هرو */
+.hero-wrap{
+position:relative; min-height:42vh;
+display:flex; align-items:center; justify-content:center;
+background-image:linear-gradient(135deg, rgba(212,175,55,0.06), rgba(212,175,55,0.02));
+overflow:hidden; background-attachment:fixed;
+padding:60px 20px;
+}
+.hero{text-align:center; max-width:980px; margin:auto; padding-top:60px;}
+.hero h1{font-size:40px; margin:0 0 10px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.6)}
+.hero p{color:var(--muted); margin:0 0 16px}
+.btn{background:var(--gold); color:#000; padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none}
+.typed{display:inline-block; border-right:2px solid rgba(255,255,255,0.4); padding-right:6px; animation:blink 1s steps(2,infinite)}
+@keyframes blink{50%{border-color:transparent}}
 
-    /* هرو */
-    .hero{
-      text-align:center; max-width:980px; margin:auto; padding-top:60px;
-    }
-    .hero h1{font-size:40px; margin:0 0 10px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.6)}
-    .hero p{color:var(--muted); margin:0 0 16px}
-    .cta{display:inline-flex; gap:10px}
-    .btn{background:var(--gold); color:#000; padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none}
+/* سکشن‌ها */
+.section{max-width:1000px; margin:40px auto; padding:30px 18px;}
+h2{color:var(--gold); font-size:26px; margin:0 0 10px; padding-right:8px; border-right:4px solid var(--gold)}
+p.lead{color:var(--muted);}
 
-    /* تایپ‌رایتر */
-    .typed{display:inline-block; border-right:2px solid rgba(255,255,255,0.4); padding-right:6px; animation:blink 1s steps(2,infinite)}
-    @keyframes blink{50%{border-color:transparent}}
+/* پروژه‌ها */
+.projects{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+padding:18px; border-radius:14px; transform-style:preserve-3d;
+transition:transform .4s cubic-bezier(.2,.9,.2,1); border:1px solid rgba(255,255,255,0.03)}
+.card:hover{transform:perspective(800px) rotateY(6deg) translateY(-6px)}
+.card h3{margin:0 0 8px}
+.card p{color:var(--muted); font-size:14px}
 
-    /* سکشن‌ها */
-    .section{max-width:1000px; margin:40px auto; padding:30px 18px;}
-    h2{color:var(--gold); font-size:26px; margin:0 0 10px; padding-right:8px; border-right:4px solid var(--gold)}
-    p.lead{color:var(--muted);}
+/* گالری */
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px}
+.gallery img{width:100%; height:140px; object-fit:cover; border-radius:10px; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+#lightbox{display:none; position:fixed; inset:0; background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)); align-items:center; justify-content:center; z-index:2500}
+.lightbox-inner{position:relative; max-width:95%; max-height:90%;}
+.lb-btn{position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:none; color:#fff; font-size:22px; padding:10px; border-radius:8px; cursor:pointer}
+.lb-prev{left:-60px} .lb-next{right:-60px}
+.lb-close{position:absolute; right:-14px; top:-14px; background:var(--gold); color:#000; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center}
 
-    /* کارت پروژه سه‌بعدی */
-    .projects{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:14px; transform-style:preserve-3d; transition:transform .4s cubic-bezier(.2,.9,.2,1); border:1px solid rgba(255,255,255,0.03)}
-    .card:hover{transform:perspective(800px) rotateY(6deg) translateY(-6px)}
-    .card h3{margin:0 0 8px}
-    .card p{color:var(--muted); font-size:14px}
+/* فرم تماس */
+.contact-grid{display:grid; grid-template-columns:1fr 320px; gap:18px}
+form{display:flex; flex-direction:column; gap:12px}
+input,textarea{background:#0b0b0b; border:1px solid rgba(255,255,255,0.04); color:#fff; padding:12px; border-radius:8px}
 
-    /* گالری + لایت‌باکس با اسلایدر */
-    .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px}
-    .gallery img{width:100%; height:140px; object-fit:cover; border-radius:10px; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-    #lightbox{display:none; position:fixed; inset:0; background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)); align-items:center; justify-content:center; z-index:2500}
-    .lightbox-inner{position:relative; max-width:95%; max-height:90%;}
-    .lightbox-inner img{max-width:100%; max-height:100%; border-radius:10px}
-    .lb-btn{position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:none; color:#fff; font-size:22px; padding:10px; border-radius:8px; cursor:pointer}
-    .lb-prev{left:-60px}
-    .lb-next{right:-60px}
-    .lb-close{position:absolute; right:-14px; top:-14px; background:var(--gold); color:#000; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center}
+/* جلوه‌ها */
+.glow{text-shadow:0 0 8px rgba(212,175,55,0.25),0 0 18px rgba(212,175,55,0.12)}
+.reveal{opacity:0; transform:translateY(18px); transition:all .7s cubic-bezier(.2,.9,.2,1)}
+.reveal.show{opacity:1; transform:none}
 
-    /* دکمه بالا */
-    #topBtn{position:fixed; bottom:30px; left:30px; background:var(--gold); color:#000; border:none; padding:12px 14px; border-radius:12px; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,0.5); display:none; z-index:3000}
+/* دکمه بالا */
+#topBtn{position:fixed; bottom:30px; left:30px; background:var(--gold); color:#000; border:none; padding:12px 14px; border-radius:12px; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,0.5); display:none; z-index:3000}
 
-    /* فرم تماس */
-    .contact-grid{display:grid; grid-template-columns:1fr 320px; gap:18px}
-    form{display:flex; flex-direction:column; gap:12px}
-    input,textarea{background:#0b0b0b; border:1px solid rgba(255,255,255,0.04); color:#fff; padding:12px; border-radius:8px}
+/* ریسپانسیو */
+@media (max-width:900px){
+.menu-toggle{display:inline-block}
+nav.main{display:none; flex-direction:column; position:absolute; top:100%; right:0; left:0; background:#0b0b0b; padding:18px; border-bottom:1px solid rgba(255,255,255,0.05); z-index:5000;}
+nav.main a{padding:10px 0; font-size:16px;}
+.contact-grid{grid-template-columns:1fr}
+.lb-prev{left:10px} .lb-next{right:10px}
+} </style>
 
-    /* جلوه گلو برای هدر‌ها */
-    .glow{text-shadow:0 0 8px rgba(212,175,55,0.25),0 0 18px rgba(212,175,55,0.12)}
-
-    /* انیمیشن استگر (دور هم) */
-    .reveal{opacity:0; transform:translateY(18px); transition:all .7s cubic-bezier(.2,.9,.2,1)}
-    .reveal.show{opacity:1; transform:none}
-
-    /* ریسپانسیو */
-    @media (max-width:900px){
-      .contact-grid{grid-template-columns:1fr}
-      header.site{padding:12px}
-      .menu-toggle{display:inline-block}
-      nav.main{display:none}
-      .lb-prev{left:10px}
-      .lb-next{right:10px}
-    }
-
-  </style>
 </head>
 <body>
 
-  <header class="site">
-    <div class="brand">فرزام ● طراحی و برنامه‌نویسی</div>
-    <nav class="main">
-      <a href="#home">صفحه اصلی</a>
-      <a href="#about">درباره من</a>
-      <a href="#projects">نمونه‌کارها</a>
-      <a href="#gallery">گالری</a>
-      <a href="#blog">وبلاگ</a>
-      <a href="#contact">تماس</a>
-    </nav>
-    <button class="menu-toggle" onclick="toggleMenu()">منو</button>
-  </header>
+<header class="site">
+<div class="brand">فرزام ● طراحی و برنامه‌نویسی</div>
+<nav class="main">
+<a href="#home">صفحه اصلی</a>
+<a href="#about">درباره من</a>
+<a href="#projects">نمونه‌کارها</a>
+<a href="#gallery">گالری</a>
+<a href="#blog">وبلاگ</a>
+<a href="#contact">تماس</a>
+</nav>
+<button class="menu-toggle" onclick="toggleMenu()">منو</button>
+</header>
 
-  <main>
-    <section id="home" class="hero-wrap">
-      <div class="hero">
-        <h1 class="glow">به سایت فرزام خوش آمدید</h1>
-        <p class="lead">طراحی طلایی، مینیمال و حرفه‌ای — مخصوص خودت ✨</p>
-        <div style="margin-top:16px">
-          <a class="btn" href="#about">بیشتر درباره من</a>
-        </div>
-        <div style="margin-top:12px">
-          <span>من </span><span class="typed" id="typed"></span>
-        </div>
-      </div>
-    </section>
+<main>
+<section id="home" class="hero-wrap">
+  <div class="hero">
+    <h1 class="glow">به سایت فرزام خوش آمدید</h1>
+    <p class="lead">طراحی طلایی، مینیمال و حرفه‌ای — مخصوص خودت ✨</p>
+    <a class="btn" href="#about">بیشتر درباره من</a>
+    <div style="margin-top:12px">من <span class="typed" id="typed"></span></div>
+  </div>
+</section>
 
-    <section id="about" class="section">
-      <h2 class="glow">درباره من</h2>
-      <p class="lead">من فرزام شیران جنگ هستم. متولد 24 مرداد 1389 در تبریز. در پایه دهم رشتهٔ کامپیوتر (شبکه و نرم‌افزار) تحصیل می‌کنم و به حوزهٔ فناوری علاقه‌مندم.</p>
-    </section>
+<section id="about" class="section">
+<h2 class="glow">درباره من</h2>
+<p class="lead">من فرزام شیران جنگ هستم. متولد 24 مرداد 1389 در تبریز. در پایه دهم رشتهٔ کامپیوتر (شبکه و نرم‌افزار) تحصیل می‌کنم و به حوزهٔ فناوری علاقه‌مندم.</p>
+</section>
 
-    <section id="projects" class="section">
-      <h2 class="glow">نمونه‌کارها</h2>
-      <div class="projects">
-        <div class="card reveal"><h3>پروژه اول</h3><p>توضیحات کوتاه درباره پروژه اول. فناوری‌ها: HTML, CSS, JS</p></div>
-        <div class="card reveal"><h3>پروژه دوم</h3><p>توضیحات کوتاه درباره پروژه دوم. طراحی ریسپانسیو و مینیمال.</p></div>
-        <div class="card reveal"><h3>پروژه سوم</h3><p>پروژه نمونه با افکت سه‌بعدی و انیمیشن‌های نرم.</p></div>
-      </div>
-    </section>
+<section id="projects" class="section">
+<h2 class="glow">نمونه‌کارها</h2>
+<div class="projects">
+  <div class="card reveal">
+    <h3>پروژه HTML</h3>
+    <p>یک صفحه وب کامل با HTML5 استاندارد، شامل ساختار semantic و تگ‌های مدرن.</p>
+  </div>
+  <div class="card reveal">
+    <h3>پروژه CSS</h3>
+    <p>صفحه‌ای با طراحی ریسپانسیو و افکت‌های جذاب CSS، شامل Flexbox و Grid و انیمیشن‌های نرم.</p>
+  </div>
+  <div class="card reveal">
+    <h3>پروژه Python</h3>
+    <p>اپلیکیشن کوچک با Python برای مدیریت داده‌ها و انجام محاسبات ساده، همراه با رابط کاربری مینیمال.</p>
+  </div>
+</div>
+</section>
 
-    <section id="gallery" class="section">
-      <h2 class="glow">گالری</h2>
-      <div class="gallery">
-        <img data-index="0" src="https://picsum.photos/seed/p1/800/600" alt="نمونه 1">
-        <img data-index="1" src="https://picsum.photos/seed/p2/800/600" alt="نمونه 2">
-        <img data-index="2" src="https://picsum.photos/seed/p3/800/600" alt="نمونه 3">
-        <img data-index="3" src="https://picsum.photos/seed/p4/800/600" alt="نمونه 4">
-      </div>
-    </section>
+<section id="gallery" class="section">
+<h2 class="glow">گالری</h2>
+<div class="gallery">
+<img data-index="0" src="https://picsum.photos/seed/p1/800/600" alt="نمونه 1">
+<img data-index="1" src="https://picsum.photos/seed/p2/800/600" alt="نمونه 2">
+<img data-index="2" src="https://picsum.photos/seed/p3/800/600" alt="نمونه 3">
+<img data-index="3" src="https://picsum.photos/seed/p4/800/600" alt="نمونه 4">
+</div>
+</section>
 
-    <!-- لایت‌باکس با اسلایدر -->
-    <div id="lightbox" onclick="closeLightbox(event)">
-      <div class="lightbox-inner" onclick="event.stopPropagation()">
-        <button class="lb-btn lb-prev" aria-label="قبلی" onclick="prevImage(event)"><i class="fa fa-chevron-right"></i></button>
-        <img id="lb-img" src="" alt="">
-        <button class="lb-btn lb-next" aria-label="بعدی" onclick="nextImage(event)"><i class="fa fa-chevron-left"></i></button>
-        <button class="lb-close" onclick="closeLightbox(event)"><i class="fa fa-xmark"></i></button>
-      </div>
-    </div>
+<div id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lb-btn lb-prev" aria-label="قبلی" onclick="prevImage(event)"><i class="fa fa-chevron-right"></i></button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-btn lb-next" aria-label="بعدی" onclick="nextImage(event)"><i class="fa fa-chevron-left"></i></button>
+    <button class="lb-close" onclick="closeLightbox(event)"><i class="fa fa-xmark"></i></button>
+  </div>
+</div>
 
-    <section id="blog" class="section">
-      <h2 class="glow">وبلاگ</h2>
-      <p class="lead">به‌زودی نوشته‌ها و یادداشت‌های من دربارهٔ برنامه‌نویسی و تکنولوژی اینجا قرار می‌گیرند.</p>
-    </section>
+<section id="blog" class="section">
+<h2 class="glow">وبلاگ</h2>
+<p class="lead">به‌زودی نوشته‌ها و یادداشت‌های من دربارهٔ برنامه‌نویسی و تکنولوژی اینجا قرار می‌گیرند.</p>
+</section>
 
-    <section id="contact" class="section">
-      <h2 class="glow">تماس با من</h2>
-      <div class="contact-grid">
-        <form id="contactForm" onsubmit="sendMessage(event)">
-          <input type="text" id="name" placeholder="نام" required>
-          <input type="email" id="email" placeholder="ایمیل" required>
-          <input type="text" id="subject" placeholder="موضوع">
-          <textarea id="msg" rows="6" placeholder="پیام شما"></textarea>
-          <div style="display:flex; gap:10px; margin-top:6px">
-            <button type="submit" class="btn">ارسال پیام</button>
-            <button type="button" onclick="document.getElementById('contactForm').reset()" style="background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04); padding:10px 12px; border-radius:8px">پاک کردن</button>
-          </div>
-        </form>
-        <aside style="background:var(--card); padding:16px; border-radius:12px">
-          <div style="display:flex; gap:10px; align-items:center"><i class="fa fa-envelope" style="color:var(--gold)"></i><div><div style="font-size:13px; color:var(--muted)">ایمیل</div><div>farzam@example.com</div></div></div>
-          <div style="height:12px"></div>
-          <div style="display:flex; gap:10px; align-items:center"><i class="fa fa-phone" style="color:var(--gold)"></i><div><div style="font-size:13px; color:var(--muted)">تلفن</div><div>+98 912 000 0000</div></div></div>
-          <div style="height:16px"></div>
-          <div style="display:flex; gap:8px; margin-top:8px">
-            <a href="#" aria-label="instagram" style="color:var(--muted)"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="github" style="color:var(--muted)"><i class="fab fa-github"></i></a>
-            <a href="#" aria-label="linkedin" style="color:var(--muted)"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </aside>
-      </div>
-    </section>
+<section id="contact" class="section">
+<h2 class="glow">تماس با من</h2>
+<div class="contact-grid">
+<form id="contactForm" onsubmit="sendMessage(event)">
+<input type="text" id="name" placeholder="نام" required>
+<input type="email" id="email" placeholder="ایمیل" required>
+<input type="text" id="subject" placeholder="موضوع">
+<textarea id="msg" rows="6" placeholder="پیام شما"></textarea>
+<div style="display:flex; gap:10px; margin-top:6px">
+<button type="submit" class="btn">ارسال پیام</button>
+<button type="button" onclick="document.getElementById('contactForm').reset()" style="background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04); padding:10px 12px; border-radius:8px">پاک کردن</button>
+</div>
+</form>
+<aside style="background:var(--card); padding:16px; border-radius:12px">
+<div style="display:flex; gap:10px; align-items:center"><i class="fa fa-envelope" style="color:var(--gold)"></i><div><div style="font-size:13px; color:var(--muted)">ایمیل</div><div>farzam@example.com</div></div></div>
+<div style="height:12px"></div>
+<div style="display:flex; gap:10px; align-items:center"><i class="fa fa-phone" style="color:var(--gold)"></i><div><div style="font-size:13px; color:var(--muted)">تلفن</div><div>+98 912 000 0000</div></div></div>
+<div style="height:16px"></div>
+<div style="display:flex; gap:8px; margin-top:8px">
+<a href="#" aria-label="instagram" style="color:var(--muted)"><i class="fab fa-instagram"></i></a>
+<a href="#" aria-label="github" style="color:var(--muted)"><i class="fab fa-github"></i></a>
+<a href="#" aria-label="linkedin" style="color:var(--muted)"><i class="fab fa-linkedin"></i></a>
+</div>
+</aside>
+</div>
+</section>
 
-  </main>
+</main>
+<button id="topBtn" title="بازگشت به بالا">▲</button>
+<footer style="padding:18px; text-align:center; color:var(--muted); margin-top:40px; border-top:1px solid rgba(255,255,255,0.02)">© <span id="year"></span> فرزام شیران جنگ</footer>
 
-  <button id="topBtn" title="بازگشت به بالا">▲</button>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  <footer style="padding:18px; text-align:center; color:var(--muted); margin-top:40px; border-top:1px solid rgba(255,255,255,0.02)">© <span id="year"></span> فرزام شیران جنگ</footer>
+// منوی موبایل
+function toggleMenu(){
+  const nav = document.querySelector('nav.main');
+  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+}
 
-  <script>
-    // تاریخ فوتر
-    document.getElementById('year').textContent = new Date().getFullYear();
+// تایپ‌رایتر
+const texts = ['عاشقِ یادگیری‌ام','طراحِ مینیمال','برنامه‌نویسِ مشتاق'];
+let ti=0, ci=0;
+function type(){
+  const el = document.getElementById('typed');
+  const txt = texts[ti];
+  el.textContent = txt.slice(0, ci);
+  ci++;
+  if(ci>txt.length){ setTimeout(()=>{ci=0; ti=(ti+1)%texts.length; type();},800); } else setTimeout(type,90);
+}
+type();
 
-    // منوی موبایل ساده
-    function toggleMenu(){
-      const nav = document.querySelector('nav.main');
-      if(nav.style.display === 'flex') nav.style.display = 'none'; else nav.style.display = 'flex';
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry,idx)=>{
+    if(entry.isIntersecting){
+      setTimeout(()=> entry.target.classList.add('show'), idx*120);
     }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-    // تایپ‌رایتر ساده
-    const texts = ['عاشقِ یادگیری‌ام','طراحِ مینیمال','برنامه‌نویسِ مشتاق'];
-    let ti=0, ci=0;
-    function type(){
-      const el = document.getElementById('typed');
-      if(!el) return;
-      const txt = texts[ti];
-      el.textContent = txt.slice(0, ci);
-      ci++;
-      if(ci>txt.length){ setTimeout(()=>{ci=0; ti=(ti+1)%texts.length; type();},800); } else setTimeout(type,90);
-    }
-    type();
+// Lightbox
+const gallery = Array.from(document.querySelectorAll('.gallery img'));
+let currentIndex = 0;
+function openLightbox(src, idx){
+  currentIndex = typeof idx === 'number' ? idx : gallery.findIndex(i => i.src===src);
+  document.getElementById('lb-img').src = gallery[currentIndex].src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox(e){ if(e) e.stopPropagation(); document.getElementById('lightbox').style.display = 'none'; }
+function nextImage(e){ e.stopPropagation(); currentIndex = (currentIndex+1)%gallery.length; document.getElementById('lb-img').src = gallery[currentIndex].src; }
+function prevImage(e){ e.stopPropagation(); currentIndex = (currentIndex-1+gallery.length)%gallery.length; document.getElementById('lb-img').src = gallery[currentIndex].src; }
+gallery.forEach((img, i)=> img.addEventListener('click', ()=> openLightbox(img.src, i)));
+document.querySelector('.lightbox-inner').addEventListener('click',(e)=> e.stopPropagation());
 
-    // Scroll reveal (stagger)
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach((entry,idx)=>{
-        if(entry.isIntersecting){
-          setTimeout(()=> entry.target.classList.add('show'), idx*120);
-        }
-      });
-    },{threshold:0.12});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// دکمه بالا
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll', ()=>{ topBtn.style.display = window.scrollY>300 ? 'block' : 'none'; });
+topBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
-    // Lightbox slider
-    const gallery = Array.from(document.querySelectorAll('.gallery img'));
-    let currentIndex = 0;
-    function openLightbox(src, idx){
-      currentIndex = typeof idx === 'number' ? idx : gallery.findIndex(i => i.src===src);
-      document.getElementById('lb-img').src = gallery[currentIndex].src;
-      document.getElementById('lightbox').style.display = 'flex';
-    }
-    function closeLightbox(e){ if(e) e.stopPropagation(); document.getElementById('lightbox').style.display = 'none'; }
-    function nextImage(e){ e.stopPropagation(); currentIndex = (currentIndex+1)%gallery.length; document.getElementById('lb-img').src = gallery[currentIndex].src; }
-    function prevImage(e){ e.stopPropagation(); currentIndex = (currentIndex-1+gallery.length)%gallery.length; document.getElementById('lb-img').src = gallery[currentIndex].src; }
-    gallery.forEach((img, i)=> img.addEventListener('click', ()=> openLightbox(img.src, i)));
+// فرم تماس
+function sendMessage(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+  const subject=document.getElementById('subject').value||'پیام از سایت';
+  const msg=document.getElementById('msg').value;
+  const body=encodeURIComponent(msg + "\n\n---\n" + name + " | " + email);
+  window.location.href = `mailto:farzam@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+}
 
-    // prevent closing when clicking inner controls
-    document.querySelector('.lightbox-inner').addEventListener('click',(e)=> e.stopPropagation());
+// پارالاکس هرو
+window.addEventListener('scroll', ()=>{
+  const hero = document.querySelector('.hero-wrap');
+  const offset = window.scrollY * 0.3;
+  hero.style.backgroundPosition = `center ${offset}px`;
+});
+</script>
 
-    // دکمه بازگشت به بالا
-    const topBtn = document.getElementById('topBtn');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY>300) topBtn.style.display='block'; else topBtn.style.display='none';
-    });
-    topBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-    // فرم تماس -> mailto
-    function sendMessage(e){
-      e.preventDefault();
-      const name=document.getElementById('name').value;
-      const email=document.getElementById('email').value;
-      const subject=document.getElementById('subject').value||'پیام از سایت';
-      const msg=document.getElementById('msg').value;
-      const body=encodeURIComponent(msg + "
-
----
-" + name + " | " + email);
-      const mailto=`mailto:farzam@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      window.location.href = mailto;
-    }
-
-    // Smooth parallax effect
-    window.addEventListener('scroll', ()=>{
-      const hero = document.querySelector('.hero-wrap');
-      const offset = window.scrollY * 0.3;
-      hero.style.backgroundPosition = `center ${offset}px`;
-    });
-  </script>
 </body>
 </html>
